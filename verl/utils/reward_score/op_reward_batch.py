@@ -1,3 +1,11 @@
+
+"""
+This module is part of the reward system for OP–GRPO training.  
+It focuses on **format checking and penalties**, ensuring that generated 
+responses follow the canonical <core perspectives>/<summary> structure, 
+avoid redundancy, and maintain sufficient perspective coverage.  
+The computed scores are used as part of the overall reward signal during training.
+"""
 import re
 from collections import Counter
 from typing import List, Optional, Dict, Any

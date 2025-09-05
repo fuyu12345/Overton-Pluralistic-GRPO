@@ -3,7 +3,6 @@
 Build an (anchor, positive, negative) triplet dataset from the original valueprism.csv answers.
 
 Pipeline
-========
 1. **Sentence extraction** – pull out perspective/stand‑alone sentences from each answer.
 2. **Embedding similarity filter** – compute pair‑wise cosine similarity with a SentenceTransformer
    model and keep only pairs whose similarity ≥ SIM_THRESHOLD.
@@ -43,9 +42,8 @@ from nltk.corpus import stopwords
 from sentence_transformers import SentenceTransformer, util
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-# ──────────────────────────────────────────────────────────────
+
 # CONFIG & LOGGING
-# ──────────────────────────────────────────────────────────────
 LOGDIR = "/home/zczlyf7/Overton-PPO/logs"
 os.makedirs(LOGDIR, exist_ok=True)
 logfile = os.path.join(
@@ -79,10 +77,8 @@ llm_model = AutoModelForCausalLM.from_pretrained(
 )
 llm_model.eval()
 
-# ──────────────────────────────────────────────────────────────
-# HELPERS
-# ──────────────────────────────────────────────────────────────
 
+# HELPERS
 def strip_perspective(sentence: str) -> str:
     """Remove leading perspective clause, e.g.:
     "In the perspective of Justice, XYZ" → "XYZ"""    
@@ -140,9 +136,7 @@ def llm_majority_vote(pair: tuple[str, str], repeat: int = REPEAT_VOTES) -> str:
     yes_majority = votes.count("Yes") >= (repeat // 2 + 1)
     return "Yes" if yes_majority else "No"
 
-# ──────────────────────────────────────────────────────────────
 # MAIN
-# ──────────────────────────────────────────────────────────────
 print("Loading CSV …", file=sys.stderr)
 df = pd.read_csv(CSV_PATH)
 # df = df[0:10]  # Uncomment for quick debug on a subset
@@ -180,7 +174,7 @@ for row_id, row in df.iterrows():
 
     anchor_idx = positive_idx = None
 
-    # ───── find first anchor‑positive match via LLM ─────
+    #  find first anchor‑positive match via LLM
     for i, j, sim in candidate_pairs:
         verdict = llm_majority_vote((sentences[i], sentences[j]))
         print(f"[{row_id}] Trying pair (i={i}, j={j}, sim={sim:.3f}) – LLM: {verdict}")
@@ -192,7 +186,7 @@ for row_id, row in df.iterrows():
         print(f"[{row_id}] No anchor‑positive confirmed – skipped.")
         continue
 
-    # ───── search for a negative ─────
+    # search for a negative
     anchor_sim_scores = [float(util.cos_sim(embs[anchor_idx], embs[k])) for k in range(len(sentences))]
     rest_indices = [k for k in range(len(sentences)) if k not in {anchor_idx, positive_idx}]
     rest_indices.sort(key=lambda k: anchor_sim_scores[k], reverse=True)
@@ -220,9 +214,7 @@ for row_id, row in df.iterrows():
     )
     print(f"[{row_id}] Triplet saved.")
 
-# ──────────────────────────────────────────────────────────────
 # SAVE
-# ──────────────────────────────────────────────────────────────
 triplet_df = pd.DataFrame(triplet_rows)
 triplet_df.to_csv(OUT_CSV, index=False)
-print(f"\n✅ Done. Triplet dataset written to {OUT_CSV} (n_rows={len(triplet_df)}).")
+print(f"\n Done. Triplet dataset written to {OUT_CSV} (n_rows={len(triplet_df)}).")
