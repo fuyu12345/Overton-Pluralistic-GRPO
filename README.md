@@ -39,3 +39,12 @@ To install all required packages:
 ```bash
 pip install -r requirements.txt
 ```
+
+Running Instructions
+
+1. Use the corresponding preprocessing scripts for each dataset to generate the required Parquet training files.
+2. Before starting GRPO training, you may fine-tune the SBERT model to improve its performance for the OP-GRPO stage.
+3.Run the run_grpo.sh script to launch OP-GRPO training.
+
+## 🚨 Important Notification
+please modoify all of the file path in your place, to replace the current path.
