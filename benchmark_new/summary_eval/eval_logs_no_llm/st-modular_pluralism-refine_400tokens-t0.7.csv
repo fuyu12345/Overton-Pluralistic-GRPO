@@ -1,0 +1,7 @@
+label,reference_csv,candidate_csv,total,hit_all,absolute_accuracy,relative_accuracy,timestamp,log_path
+5p,/home/zczlyf7/Overton-PPO/benchmark_new/dataset/test_5p.csv,/home/zczlyf7/Overton-PPO/workflow/modular_pluralism/refine_400tokens/test_5p_gen.csv,300,8,0.02666666666666667,0.3553333333333337,2025-08-22T06:39:45,eval_logs_no_llm/eval_5p_0822_063935.log
+6p,/home/zczlyf7/Overton-PPO/benchmark_new/dataset/test_6p.csv,/home/zczlyf7/Overton-PPO/workflow/modular_pluralism/refine_400tokens/test_6p_gen.csv,300,0,0.0,0.21055555555555536,2025-08-22T06:39:53,eval_logs_no_llm/eval_6p_0822_063945.log
+7p,/home/zczlyf7/Overton-PPO/benchmark_new/dataset/test_7p.csv,/home/zczlyf7/Overton-PPO/workflow/modular_pluralism/refine_400tokens/test_7p_gen.csv,300,0,0.0,0.18523809523809548,2025-08-22T06:40:00,eval_logs_no_llm/eval_7p_0822_063953.log
+8p,/home/zczlyf7/Overton-PPO/benchmark_new/dataset/test_8p.csv,/home/zczlyf7/Overton-PPO/workflow/modular_pluralism/refine_400tokens/test_8p_gen.csv,300,0,0.0,0.17416666666666666,2025-08-22T06:40:09,eval_logs_no_llm/eval_8p_0822_064000.log
+9p,/home/zczlyf7/Overton-PPO/benchmark_new/dataset/test_9p.csv,/home/zczlyf7/Overton-PPO/workflow/modular_pluralism/refine_400tokens/test_9p_gen.csv,300,0,0.0,0.17222222222222242,2025-08-22T06:40:17,eval_logs_no_llm/eval_9p_0822_064009.log
+10p,/home/zczlyf7/Overton-PPO/benchmark_new/dataset/test_10p.csv,/home/zczlyf7/Overton-PPO/workflow/modular_pluralism/refine_400tokens/test_10p_gen.csv,300,0,0.0,0.216666666666667,2025-08-22T06:40:26,eval_logs_no_llm/eval_10p_0822_064017.log

@@ -1,0 +1,25 @@
+=== Static parameters ===
+  REFERENCE_CSV : /home/zczlyf7/Overton-PPO/benchmark2/dataset/test_5p.csv
+  CANDIDATE_CSV : /p/project1/westai0052/self_rewarding/verl/summary/evaluate/sft_eval_summaries_RL2.csv
+     SBERT_PATH : /p/project1/westai0052/self_rewarding/verl/MODEL/st-scale70
+      THRESHOLD : 0.7
+           MODE : explicit
+      MAX_WORDS : 450
+         DEVICE : cuda
+
+Traceback (most recent call last):
+  File "/p/project1/westai0052/self_rewarding/verl/benchmark/summary_eval/direct_eval.py", line 166, in <module>
+    main()
+  File "/p/project1/westai0052/self_rewarding/verl/benchmark/summary_eval/direct_eval.py", line 86, in main
+    reference_df  = pd.read_csv(REFERENCE_CSV)
+  File "/p/project1/westai0052/miniforge3/envs/verl/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/p/project1/westai0052/miniforge3/envs/verl/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/p/project1/westai0052/miniforge3/envs/verl/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/p/project1/westai0052/miniforge3/envs/verl/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/p/project1/westai0052/miniforge3/envs/verl/lib/python3.10/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/home/zczlyf7/Overton-PPO/benchmark2/dataset/test_5p.csv'

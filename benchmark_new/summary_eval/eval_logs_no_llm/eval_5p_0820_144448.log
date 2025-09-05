@@ -1,0 +1,10 @@
+=== Static parameters ===
+  REFERENCE_CSV : /home/zczlyf7/Overton-PPO/benchmark_new/dataset/test_5p.csv
+  CANDIDATE_CSV : /home/zczlyf7/Overton-PPO/workflow/Qwen3-8B/explicit/test_5p_gen.csv
+     SBERT_PATH : /scratch/zczlyf7/st_models/MultipleNegativesRankingLoss/hpo_scale_40/checkpoint-1186
+      THRESHOLD : 0.7
+           MODE : explicit
+      MAX_WORDS : 450
+         DEVICE : cuda
+          LABEL : 5p
+

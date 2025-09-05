@@ -1,0 +1,3 @@
+label,reference_csv,candidate_csv,total,hit_all,absolute_accuracy,relative_accuracy,std_dev,std_error,timestamp,log_path
+5p,/home/zczlyf7/Overton-PPO/benchmark_new/dataset/test_5p.csv,/home/zczlyf7/Overton-PPO/steps_results/qwen1.5b/120steps/qwen2.5-1.5b-im-5p.csv,300,28,0.09333333333333334,0.5506666666666665,0.26375409422835927,0.015227849730260912,2025-08-30T16:26:29,eval_logs_steps/eval_5p_0830_162613.log
+10p,/home/zczlyf7/Overton-PPO/benchmark_new/dataset/test_10p.csv,/home/zczlyf7/Overton-PPO/steps_results/qwen1.5b/120steps/qwen2.5-1.5b-im-10p.csv,300,0,0.0,0.48066666666666646,0.18191450983604604,0.010502839122333999,2025-08-30T16:26:47,eval_logs_steps/eval_10p_0830_162629.log

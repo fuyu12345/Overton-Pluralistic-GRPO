@@ -1,0 +1,10 @@
+=== Static parameters ===
+  REFERENCE_CSV : /home/zczlyf7/Overton-PPO/benchmark_new/dataset/test_5p.csv
+  CANDIDATE_CSV : /home/zczlyf7/Overton-PPO/steps_results/llama/0steps/qwen2.5-1.5b-im-5p.csv
+     SBERT_PATH : paraphrase-mpnet-base-v2
+      THRESHOLD : 0.7
+           MODE : 0step
+      MAX_WORDS : 450
+         DEVICE : cuda
+          LABEL : 5p
+
