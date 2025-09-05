@@ -26,3 +26,16 @@ This folder contains the training process for the OP-SBERT model. It includes th
 
 ### 📌 `benchmark_new/`
 This folder contains the test datasets and evaluation tools, including inference scripts for trained models, GPT-4.1 as an LLM-judge, natural language inference benchmarks, SBERT-based similarity checks, and token generation analysis, providing a comprehensive framework for evaluating OP-GRPO performance.
+
+
+---
+
+
+
+## 🚀 Installation and Usage
+
+To install all required packages:
+
+```bash
+pip install -r requirements.txt
+```
