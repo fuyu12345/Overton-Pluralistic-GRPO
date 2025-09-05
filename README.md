@@ -3,7 +3,7 @@
 This repository provides a complete OP–GRPO implementation pipeline, offering an end-to-end framework for aligning large language models with Overton pluralism. It covers all key stages: data preprocessing with redundancy filtering and perspective augmentation to build high-quality, diverse datasets; training with GRPO, extended by an OP-specific reward system that incorporates perspective coverage, uniqueness, and formatting consistency; and evaluation, using ValuePrism NLI benchmarks, coverage metrics, and token efficiency analysis.
 
 ## 🚨 Important Notification
-this project is build on the base of [**Verl**](https://github.com/volcengine/verl): which provides a flexible and efficient foundation for reinforcement learning with large language models. Verl is designed to support diverse RL algorithms such as PPO and GRPO, while offering high-performance GPU utilization and modular extensibility.
+
 
 ### 📁 **OP-GRPO Folder Structure**
 
@@ -47,4 +47,8 @@ Running Instructions
 3.Run the run_grpo.sh script to launch OP-GRPO training.
 
 ## 🚨 Important Notification
-please modoify all of the file path in your place, to replace the current path.
+1. Please modoify all of the file path in your place, to replace the current path.
+
+2. This project is build on the base of [**Verl**](https://github.com/volcengine/verl): which provides a flexible and efficient foundation for reinforcement learning with large language models. Verl is designed to support diverse RL algorithms such as PPO and GRPO, while offering high-performance GPU utilization and modular extensibility.
+
+3. The Modular Pluralism method inference and evalaution can refer [**Modular Pluralism**](https://github.com/BunsenFeng/modular_pluralism)
